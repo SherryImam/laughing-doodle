@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Halo Shea · E-commerce store (concept build by Sherry Imam)</title>
+<link rel="stylesheet" href="store.css">
+<style>
+.hero{background:var(--cream);padding:0}
+.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;min-height:540px}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-top:44px;padding-bottom:44px;min-height:0}}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4.2rem)}
+.hero p{font-size:1.12rem;color:var(--muted);max-width:460px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.hero .proof{display:flex;align-items:center;gap:10px;margin-top:22px;font-size:.88rem;color:var(--muted)}
+.stage{position:relative;aspect-ratio:1/1;max-width:520px;width:100%;margin:0 auto}
+.stage .sun{position:absolute;inset:10% 8% 14% 8%;border-radius:50%;background:radial-gradient(circle at 50% 45%,#f3d9a8,#ecc88a 60%,#e5b974)}
+.stage .p{position:absolute;bottom:8%}
+.stage .p1{left:2%;width:40%}.stage .p2{left:30%;width:44%;bottom:6%;z-index:2}.stage .p3{right:0;width:36%}
+.trust{border-bottom:1px solid var(--line)}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding-top:20px;padding-bottom:20px;font-size:.86rem;text-align:center;color:var(--muted)}
+.trust b{display:block;color:var(--ink);font-size:.92rem}
+@media(max-width:760px){.trust .wrap{grid-template-columns:repeat(2,1fr)}}
+.head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:28px;flex-wrap:wrap}
+.head h2{font-size:clamp(1.8rem,3.6vw,2.6rem)}
+.bundle{background:var(--green);color:#efe6d6;border-radius:28px;overflow:hidden;display:grid;grid-template-columns:1.1fr .9fr}
+@media(max-width:860px){.bundle{grid-template-columns:1fr}}
+.bundle .tx{padding:52px}
+@media(max-width:560px){.bundle .tx{padding:30px}}
+.bundle h2{color:#fff;font-size:clamp(1.8rem,3.6vw,2.6rem)}
+.bundle .price{font-size:1.6rem;color:#fff;margin:18px 0}.bundle .price s{opacity:.55;font-size:1.1rem;margin-left:8px}
+.bundle .art{background:#2a4a3b;display:flex;align-items:flex-end;justify-content:center;gap:0;padding:36px 20px 26px}
+.bundle .art svg{width:33%}
+.bundle ul{padding-left:18px;margin:0}
+.concern{border-radius:20px;padding:28px;text-decoration:none;display:flex;flex-direction:column;gap:6px;min-height:170px;justify-content:flex-end}
+.concern b{font-size:1.25rem}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+@media(max-width:860px){.story{grid-template-columns:1fr}}
+.story .pic{aspect-ratio:5/4;border-radius:24px;background:linear-gradient(160deg,#e9cfa6,#c99a63);position:relative;overflow:hidden}
+.story .pic:before{content:"";position:absolute;left:-10%;right:-10%;bottom:-30%;height:70%;background:#b07d48;border-radius:50% 50% 0 0}
+.story .pic:after{content:"";position:absolute;right:14%;top:14%;width:22%;aspect-ratio:1;border-radius:50%;background:#f7e2b8}
+.stats{display:flex;gap:30px;margin-top:22px;flex-wrap:wrap}.stats b{display:block;font-size:1.6rem}
+.rev{background:var(--cream);border-radius:20px;padding:26px}
+.rev p{font-size:1.02rem}
+.news{background:var(--cream);border-radius:28px;padding:52px;text-align:center}
+.news form{display:flex;gap:10px;max-width:460px;margin:20px auto 0;flex-wrap:wrap}
+.news input{flex:1;min-width:200px;padding:14px 18px;border-radius:999px;border:1px solid var(--line);font-size:.95rem;background:#fff}
+</style></head><body>
+<div class="sample-bar"><div class="wrap"><span>Sherry Imam · Concept build</span><a href="../index.html">← All builds</a></div></div>
+<div class="announce">FREE SHIPPING ON ORDERS OVER $60 · 30-DAY HAPPY-SKIN GUARANTEE</div>
+<header class="site"><div class="wrap">
+  <a class="brand serif" href="index.html">Halo Shea</a>
+  <nav class="menu"><a href="#shop">Shop all</a><a href="#bundle">Bundles</a><a href="#concerns">Skin concerns</a><a href="#story">Our story</a></nav>
+  <button class="bag" onclick="CART.open()">Bag<span id="cartCount">0</span></button>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div>
+    <span class="eyebrow">Clean skincare, rooted in West Africa</span>
+    <h1 class="serif">Skin that glows like it's been on holiday.</h1>
+    <p>Small-batch skincare made with fair-trade shea, baobab and moringa. Gentle enough for every day and every skin tone, and it actually works.</p>
+    <div class="ctas"><a class="btn dark" href="#shop">Shop bestsellers</a><a class="btn light" href="#concerns">Find my routine</a></div>
+    <div class="proof"><span class="rating">★★★★★</span> 4.9 from 5,200+ reviews</div>
+  </div>
+  <div class="stage" id="stage"><div class="sun"></div></div>
+</div></section>
+
+<div class="trust"><div class="wrap">
+  <div><b>Free shipping</b>On orders over $60</div><div><b>30-day guarantee</b>Love it or get a refund</div><div><b>Fair-trade shea</b>From women-led co-ops</div><div><b>Cruelty-free</b>Never tested on animals</div>
+</div></div>
+
+<section id="shop"><div class="wrap">
+  <div class="head"><div><span class="eyebrow">Bestsellers</span><h2 class="serif">Most-loved, most-reordered</h2></div><a class="btn light" href="#shop">Shop all</a></div>
+  <div class="grid g3" id="grid"></div>
+</div></section>
+
+<section id="bundle" style="padding-top:0"><div class="wrap"><div class="bundle">
+  <div class="tx">
+    <span class="eyebrow" style="color:#e7b98f">Bundle &amp; save</span>
+    <h2 class="serif">The Glow Ritual</h2>
+    <p>Our 3-step routine in one set: cleanse, glow, repair. Everything your skin needs, morning to night.</p>
+    <ul id="bundleItems"></ul>
+    <div class="price" id="bundlePrice"></div>
+    <button class="btn terra" id="bundleBtn">Add the set to bag</button>
+  </div>
+  <div class="art" id="bundleArt"></div>
+</div></div></section>
+
+<section id="concerns" style="padding-top:0"><div class="wrap">
+  <div class="head"><div><span class="eyebrow">Shop by concern</span><h2 class="serif">What does your skin need?</h2></div></div>
+  <div class="grid g3">
+    <a class="concern" href="product.html?id=body-butter" style="background:#efe1cc"><span class="muted">Shea butter, scrub</span><b class="serif">Dry, tight skin</b></a>
+    <a class="concern" href="product.html?id=face-oil" style="background:#f4dfb2"><span class="muted">Baobab oil, mist</span><b class="serif">Dull, uneven tone</b></a>
+    <a class="concern" href="product.html?id=cleanser" style="background:#dfe6d3"><span class="muted">Black soap, night cream</span><b class="serif">Breakouts &amp; oiliness</b></a>
+  </div>
+</div></section>
+
+<section id="story" style="padding-top:0"><div class="wrap story">
+  <div class="pic" aria-hidden="true"></div>
+  <div>
+    <span class="eyebrow">Our story</span>
+    <h2 class="serif">Made with the women who make the shea.</h2>
+    <p class="muted">Every jar starts in Northern Ghana, where women-led co-operatives hand-process our shea. We pay above fair-trade price and reinvest 5% of profit in their communities.</p>
+    <div class="stats"><div><b class="serif">1,200+</b><span class="muted">women in partner co-ops</span></div><div><b class="serif">100%</b><span class="muted">traceable shea</span></div><div><b class="serif">5%</b><span class="muted">of profit reinvested</span></div></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="head"><div><span class="eyebrow">Reviews</span><h2 class="serif">Real routines, real glow</h2></div></div>
+  <div class="grid g3">
+    <div class="rev"><span class="rating">★★★★★</span><p>"The body butter is the only thing that's fixed my dry elbows. It sinks in fast and smells amazing."</p><span class="muted">Customer · Body Butter</span></div>
+    <div class="rev"><span class="rating">★★★★★</span><p>"Three weeks of the face oil and my dark spots are visibly lighter. I've already reordered."</p><span class="muted">Customer · Face Oil</span></div>
+    <div class="rev"><span class="rating">★★★★☆</span><p>"Gentle cleanser that doesn't leave my skin tight. Would love a bigger bottle!"</p><span class="muted">Customer · Cleanser</span></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap"><div class="news">
+  <span class="eyebrow">Join the glow list</span>
+  <h2 class="serif">Get 10% off your first order</h2>
+  <p class="muted">Routines, new launches and member-only offers. No spam, ever.</p>
+  <form onsubmit="event.preventDefault();this.nextElementSibling.textContent='Demo form: no data is collected.'"><input type="email" placeholder="Your email" aria-label="Email"><button class="btn dark" type="submit">Get my 10% off</button></form>
+  <p class="tiny" role="status"></p>
+</div></div></section>
+
+<div class="wrap" style="margin-bottom:40px"><div class="note"><b>What this build shows:</b> a conversion-focused store home: offer bar, benefit-led hero, trust strip, bestsellers with quick add, a bundle that raises order value, shop-by-concern navigation, brand story, reviews, email capture with a first-order offer, and a cart with a free-shipping progress bar. <b>Easy to maintain:</b> every product, price and the bundle live in one short content file, so the owner can update the shop without touching the design.</div></div>
+
+<footer class="site"><div class="wrap">
+  <div class="cols">
+    <div><div class="serif" style="font-size:1.4rem;color:#fff">Halo Shea</div><p>Clean skincare, rooted in West Africa.</p></div>
+    <div><h4>Shop</h4><ul><li><a href="#shop">Bestsellers</a></li><li><a href="#bundle">Bundles</a></li><li><a href="#concerns">By concern</a></li></ul></div>
+    <div><h4>Help</h4><ul><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="#">Contact</a></li></ul></div>
+    <div><h4>About</h4><ul><li><a href="#story">Our story</a></li><li><a href="#">Ingredients</a></li><li><a href="#">Wholesale</a></li></ul></div>
+  </div>
+  <p style="margin-top:36px;opacity:.7">Concept build by Sherry Imam · Halo Shea is a fictional brand. All products, reviews and figures are dummy content.</p>
+</div></footer>
+
+<div id="cartRoot"></div>
+<script src="store-data.js"></script>
+<script>
+document.getElementById("cartRoot").innerHTML = cartDrawerHTML();
+var stage = document.getElementById("stage");
+[["body-butter","p1"],["face-oil","p2"],["night-cream","p3"]].forEach(function (x) {
+  var d = document.createElement("div"); d.className = "p " + x[1]; d.innerHTML = productArt(getProduct(x[0])); stage.appendChild(d);
+});
+document.getElementById("grid").innerHTML = STORE.products.map(function (p) {
+  return '<div><a class="pcard" href="product.html?id=' + p.id + '"><div class="art">' + (p.badge ? '<span class="tag">' + p.badge + '</span>' : '') + productArt(p) + '</div>' +
+    '<span class="rating">' + stars(p.rating) + '<small>' + p.rating + ' (' + p.reviews.toLocaleString() + ')</small></span>' +
+    '<div class="meta"><b>' + p.name + '</b><span>' + money(p.price) + '</span></div><span class="muted" style="font-size:.88rem">' + p.short + '</span></a>' +
+    '<div class="quick"><button onclick="CART.add(\'' + p.id + '\',1,\'' + p.name.replace(/'/g, "\\'") + '\',' + p.price + ')">Quick add</button></div></div>';
+}).join("");
+var b = STORE.bundle, full = 0;
+document.getElementById("bundleItems").innerHTML = b.items.map(function (id) { var p = getProduct(id); full += p.price; return "<li>" + p.name + "</li>"; }).join("");
+document.getElementById("bundlePrice").innerHTML = money(b.price) + "<s>" + money(full) + "</s>";
+document.getElementById("bundleArt").innerHTML = b.items.map(function (id) { return productArt(getProduct(id)); }).join("");
+document.getElementById("bundleBtn").onclick = function () { CART.add(b.id, 1, b.name, b.price); };
+CART.render();
+</script>
+</body></html>

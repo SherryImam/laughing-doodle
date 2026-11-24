@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Email automation · Quillbook (concept build by Sherry Imam)</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.flow{display:flex;flex-direction:column;align-items:center;gap:0}
+.node{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 16px;box-shadow:var(--shadow);font-size:.88rem;text-align:center;min-width:240px;max-width:340px}
+.node.trig{background:var(--brand);color:#fff;border-color:var(--brand);font-weight:700}
+.node.cond{background:#fff4dc;border-color:#f6d28b;font-weight:700}
+.node.goal{background:var(--green-soft);border-color:#a7e3c9;font-weight:700;color:#065f46}
+.node small{display:block;color:var(--muted);font-weight:500}
+.node.trig small{color:#dfe1ff}
+.arrow{width:2px;height:22px;background:#c9cbe0;position:relative}
+.arrow:after{content:"";position:absolute;bottom:-2px;left:-4px;border:5px solid transparent;border-top-color:#c9cbe0}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:14px;width:100%;max-width:720px}
+.split .branch{display:flex;flex-direction:column;align-items:center}
+.split .lab{font-size:.75rem;font-weight:800;color:var(--muted);margin-bottom:4px}
+@media(max-width:600px){.node{min-width:0;width:100%}.split{grid-template-columns:1fr}}
+.mail{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);overflow:hidden;font-size:.9rem}
+.mail .hd{padding:12px 16px;border-bottom:1px solid var(--line);background:#f7f7fb}
+.mail .hd b{display:block}
+.mail .bd{padding:16px}
+.mail .bd .btn{padding:9px 14px;font-size:.85rem}
+</style></head><body>
+<div class="sample-bar"><div class="wrap"><span>Sherry Imam · Concept build</span><a href="index.html">← All builds</a></div></div>
+
+<section class="page-head"><div class="wrap">
+  <span class="eyebrow">Email automation</span>
+  <h1>Trial-to-paid onboarding sequence</h1>
+  <p class="lede">Goal: turn free trials into paying customers. The sequence branches on behaviour: users who haven't sent their first invoice get help, and users who have get pushed toward upgrading.</p>
+  <div class="grid g4" style="margin-top:18px">
+    <div class="card kpi"><b>58%</b><span>Avg. open rate</span></div>
+    <div class="card kpi"><b>11.4%</b><span>Avg. click rate</span></div>
+    <div class="card kpi"><b>60%</b><span>Trials activated</span> <em>was 41%</em></div>
+    <div class="card kpi"><b>23%</b><span>Trial → paid (all channels)</span></div>
+  </div>
+</div></section>
+
+<section style="padding-top:16px"><div class="wrap">
+  <h2>Workflow</h2>
+  <div class="card"><div class="flow">
+    <div class="node trig">Trigger: starts free trial<small>from landing page, ad or partner link</small></div><div class="arrow"></div>
+    <div class="node">Day 0 · Welcome: "Send your first invoice in 60 seconds"<small>open 72% · click 21%</small></div><div class="arrow"></div>
+    <div class="node cond">Condition (day 2): has sent first invoice?</div><div class="arrow"></div>
+    <div class="split">
+      <div class="branch"><span class="lab">NO</span><div class="node">Day 2 · "Stuck? Here's a 2-minute video"<small>open 61% · click 14%</small></div><div class="arrow"></div><div class="node">Day 4 · Import your clients from a spreadsheet<small>open 52% · click 9%</small></div></div>
+      <div class="branch"><span class="lab">YES</span><div class="node">Day 3 · Turn on automatic reminders<small>open 66% · click 18%</small></div><div class="arrow"></div><div class="node">Day 5 · Your cash-flow dashboard, explained<small>open 54% · click 8%</small></div></div>
+    </div><div class="arrow"></div>
+    <div class="node">Day 7 · Story: "From 3 weeks to 6 days"<small>open 55% · click 7%</small></div><div class="arrow"></div>
+    <div class="node">Day 11 · Trial ends in 3 days + plan picker<small>open 58% · click 12%</small></div><div class="arrow"></div>
+    <div class="node">Day 13 · Last day: 20% off yearly<small>open 49% · click 10%</small></div><div class="arrow"></div>
+    <div class="node goal">Goal: upgrades to a paid plan → exits sequence, enters customer onboarding</div>
+  </div></div>
+  <p class="small muted" style="margin-top:10px">Also running: partner onboarding (kit + link on signing), abandoned checkout (1h + 24h), and monthly "value" newsletter.</p>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2>Example emails</h2>
+  <div class="grid g3">
+    <div class="mail"><div class="hd"><b>Your first invoice, in 60 seconds</b><span class="small muted">Day 0 · Welcome</span></div><div class="bd"><p>Hi Ada,</p><p>Welcome to Quillbook. Let's get you paid. Your first invoice takes about a minute: pick a client, add what you did, hit send.</p><span class="btn primary">Create my first invoice</span><p class="small muted" style="margin-top:12px">P.S. Reply to this email if you get stuck. A real person reads it.</p></div></div>
+    <div class="mail"><div class="hd"><b>Stuck? Here's a 2-minute video</b><span class="small muted">Day 2 · No invoice yet</span></div><div class="bd"><p>Hi Ada,</p><p>Most people don't send their first invoice because they're not sure what to put on it. This 2-minute video walks through a real one, line by line.</p><span class="btn primary">Watch the video</span></div></div>
+    <div class="mail"><div class="hd"><b>Your trial ends in 3 days</b><span class="small muted">Day 11 · Plan picker</span></div><div class="bd"><p>Hi Ada,</p><p>You've sent 4 invoices and been paid for 3, on average in 5 days. Keep your reminders and dashboard running by picking a plan.</p><span class="btn primary">Choose my plan</span></div></div>
+  </div>
+</div></section>
+
+<footer class="foot"><div class="wrap">Concept build by Sherry Imam · Quillbook is a fictional brand; recipient names and figures are dummy data.</div></footer>
+</body></html>

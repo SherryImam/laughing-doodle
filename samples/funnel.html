@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sales funnel · Quillbook (concept build by Sherry Imam)</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.funnel{display:grid;gap:6px;margin:20px 0}
+.stage{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:16px;align-items:center}
+@media(max-width:700px){.stage{grid-template-columns:1fr;gap:6px}}
+.bar{margin:0 auto;height:56px;border-radius:10px;background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 16px;font-weight:700;min-width:180px}
+.bar b{font-size:1.05rem}
+.stage .what{font-size:.86rem;color:var(--muted)}
+.stage .what a{font-weight:700}
+.rate{text-align:center;font-size:.8rem;font-weight:800;color:var(--green)}
+.rate span{background:var(--green-soft);padding:2px 9px;border-radius:999px}
+.last .bar{background:linear-gradient(90deg,var(--green),#10b981)}
+</style></head><body>
+<div class="sample-bar"><div class="wrap"><span>Sherry Imam · Concept build</span><a href="index.html">← All builds</a></div></div>
+
+<section class="page-head"><div class="wrap">
+  <span class="eyebrow">Funnel · 30-day launch</span>
+  <h1>Quillbook acquisition funnel</h1>
+  <p class="lede">From paid ad to paying customer, showing each step, the asset behind it, and the conversion rate. Paid ads and the partner program run side by side, so each channel's cost per customer can be compared.</p>
+</div></section>
+
+<section style="padding-top:10px"><div class="wrap">
+  <h2>Paid channel: Meta Ads</h2>
+  <div class="funnel">
+    <div class="stage"><div class="bar" style="width:100%"><span>Ad impressions</span><b>420,000</b></div><div class="what">Three ad sets: cold, lookalike, retargeting. <a href="meta.html">Campaign →</a></div></div>
+    <div class="rate"><span>2.0% click-through</span></div>
+    <div class="stage"><div class="bar" style="width:84%"><span>Landing page visits</span><b>8,400</b></div><div class="what">Single-goal trial page. <a href="landing.html">Landing page →</a></div></div>
+    <div class="rate"><span>10.9% sign up</span></div>
+    <div class="stage"><div class="bar" style="width:66%"><span>Free trials</span><b>912</b></div><div class="what">Welcome + onboarding emails start. <a href="email.html">Automation →</a></div></div>
+    <div class="rate"><span>60% activate</span></div>
+    <div class="stage"><div class="bar" style="width:50%"><span>Activated (sent 1st invoice)</span><b>547</b></div><div class="what">Activation tracked as a CRM lifecycle stage. <a href="crm.html">CRM →</a></div></div>
+    <div class="rate"><span>30% upgrade</span></div>
+    <div class="stage last"><div class="bar" style="width:36%"><span>Paying customers</span><b>164</b></div><div class="what">Sales page + trial-ending emails. <a href="sales.html">Sales page →</a></div></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2>Partner channel: affiliates &amp; agencies</h2>
+  <div class="funnel">
+    <div class="stage"><div class="bar" style="width:70%;background:linear-gradient(90deg,#b45309,var(--amber))"><span>Partner referral visits</span><b>3,050</b></div><div class="what">Unique links from 24 active partners. <a href="partners.html">Scorecard →</a></div></div>
+    <div class="rate"><span>15.1% sign up</span></div>
+    <div class="stage"><div class="bar" style="width:52%;background:linear-gradient(90deg,#b45309,var(--amber))"><span>Free trials</span><b>460</b></div><div class="what">Same onboarding automation, tagged by partner.</div></div>
+    <div class="rate"><span>32% become paying</span></div>
+    <div class="stage last"><div class="bar" style="width:34%"><span>Paying customers</span><b>147</b></div><div class="what">Partner earns 30% recurring for 12 months.</div></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2>Channel comparison</h2>
+  <div class="table-wrap"><table>
+    <tr><th>Channel</th><th class="num">Trials</th><th class="num">Trial → paid</th><th class="num">Customers</th><th class="num">Cost</th><th class="num">Cost per customer</th></tr>
+    <tr><td>Meta Ads</td><td class="num">912</td><td class="num">18.0%</td><td class="num">164</td><td class="num">$8,200 ad spend</td><td class="num">$50</td></tr>
+    <tr><td>Partners</td><td class="num">460</td><td class="num">32.0%</td><td class="num">147</td><td class="num">$5,030 commission (yr 1)</td><td class="num"><b>$34</b></td></tr>
+  </table></div>
+  <p class="small muted" style="margin-top:10px">Partner commission = 30% × $19/mo × average 6 paid months per customer.</p>
+  <div class="note" style="margin-top:18px"><b>Insight:</b> partner-referred trials convert at almost 2x the rate of ad trials, and cost 32% less per customer. The recommendation is to shift budget toward recruiting and equipping more partners, while keeping ads for retargeting.</div>
+</div></section>
+
+<footer class="foot"><div class="wrap">Concept build by Sherry Imam · Quillbook is a fictional brand. All figures are dummy data.</div></footer>
+</body></html>

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Product page · Halo Shea (concept build by Sherry Imam)</title>
+<link rel="stylesheet" href="store.css">
+<style>
+.pdp{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;padding:40px 0 70px}
+@media(max-width:860px){.pdp{grid-template-columns:1fr;gap:28px;padding-top:24px}}
+.crumbs{font-size:.82rem;color:var(--muted);padding-top:22px}.crumbs a{text-decoration:none}
+.main-art{background:var(--cream);border-radius:24px;aspect-ratio:1/1;display:grid;place-items:center;padding:40px}
+.main-art svg{width:70%}
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+.thumbs div{background:var(--cream);border-radius:14px;aspect-ratio:1/1;display:grid;place-items:center;padding:10px;font-size:.72rem;color:var(--muted);text-align:center;border:2px solid transparent}
+.thumbs div.on{border-color:var(--ink)}
+.thumbs svg{width:70%}
+.info h1{font-size:clamp(2rem,4vw,2.8rem)}
+.price{font-size:1.5rem;margin:6px 0 14px}
+.benefits{list-style:none;padding:0;margin:18px 0;display:grid;gap:10px}
+.benefits li{display:flex;gap:10px}.benefits li:before{content:"✓";color:var(--green);font-weight:900}
+.opt{display:grid;gap:10px;margin:18px 0}
+.opt label{display:flex;justify-content:space-between;align-items:center;border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;cursor:pointer;font-size:.92rem}
+.opt input{margin-right:10px;accent-color:var(--green)}
+.opt label:has(input:checked){border-color:var(--green);background:#f3f7f4}
+.opt .save{background:var(--terra);color:#fff;font-size:.72rem;font-weight:700;padding:3px 8px;border-radius:999px}
+.buy{display:flex;gap:12px}
+.buy .qty{padding:0 14px}
+.perks{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px;font-size:.8rem;color:var(--muted);text-align:center}
+.perks div{background:var(--cream);border-radius:12px;padding:12px 8px}
+details{border-bottom:1px solid var(--line);padding:16px 0}
+details summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between}
+details summary:after{content:"+";font-weight:400}details[open] summary:after{content:"−"}
+details p{margin:10px 0 0;color:var(--muted)}
+.fbt{background:var(--cream);border-radius:24px;padding:34px}
+.fbt .row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.fbt .it{background:#fff;border-radius:16px;padding:12px;width:150px;text-align:center;font-size:.82rem}
+.fbt .it svg{width:70%;margin:0 auto 6px}
+.fbt .plus{font-size:1.6rem;color:var(--muted)}
+.fbt .tot{margin-left:auto;min-width:220px}
+@media(max-width:700px){.fbt .tot{margin-left:0;width:100%}.fbt .it{width:calc(33% - 22px);min-width:90px}}
+.rs{display:grid;grid-template-columns:240px 1fr;gap:40px}
+@media(max-width:760px){.rs{grid-template-columns:1fr}}
+.bars div{display:grid;grid-template-columns:30px 1fr 40px;gap:10px;align-items:center;font-size:.82rem;color:var(--muted);margin-bottom:6px}
+.bars span.t{height:8px;background:#ece3d6;border-radius:999px;overflow:hidden}.bars span.t i{display:block;height:100%;background:var(--gold)}
+.rv{border-bottom:1px solid var(--line);padding:16px 0}
+</style></head><body>
+<div class="sample-bar"><div class="wrap"><span>Sherry Imam · Concept build</span><a href="../index.html">← All builds</a></div></div>
+<div class="announce">FREE SHIPPING ON ORDERS OVER $60 · 30-DAY HAPPY-SKIN GUARANTEE</div>
+<header class="site"><div class="wrap">
+  <a class="brand serif" href="index.html">Halo Shea</a>
+  <nav class="menu"><a href="index.html#shop">Shop all</a><a href="index.html#bundle">Bundles</a><a href="index.html#concerns">Skin concerns</a><a href="index.html#story">Our story</a></nav>
+  <button class="bag" onclick="CART.open()">Bag<span id="cartCount">0</span></button>
+</div></header>
+
+<div class="wrap">
+  <div class="crumbs"><a href="index.html">Home</a> / <a href="index.html#shop">Shop</a> / <span id="crumb"></span></div>
+  <div class="pdp">
+    <div>
+      <div class="main-art" id="mainArt"></div>
+      <div class="thumbs" id="thumbs"></div>
+    </div>
+    <div class="info">
+      <span class="eyebrow" id="badge"></span>
+      <h1 class="serif" id="name"></h1>
+      <span class="rating" id="rating"></span>
+      <div class="price" id="price"></div>
+      <p class="muted" id="short"></p>
+      <ul class="benefits" id="benefits"></ul>
+      <div class="opt">
+        <label><span><input type="radio" name="buy" value="once" checked>One-time purchase</span><b id="pOnce"></b></label>
+        <label><span><input type="radio" name="buy" value="sub">Subscribe &amp; save · every 6 weeks</span><span><span class="save">SAVE 15%</span> <b id="pSub"></b></span></label>
+      </div>
+      <div class="buy">
+        <div class="qty"><button onclick="setQty(-1)" aria-label="Less">−</button><span id="q">1</span><button onclick="setQty(1)" aria-label="More">+</button></div>
+        <button class="btn dark" style="flex:1" onclick="addThis()">Add to bag</button>
+      </div>
+      <div class="perks"><div>Free shipping over $60</div><div>30-day guarantee</div><div>Cruelty-free</div></div>
+      <div style="margin-top:22px">
+        <details open><summary>Ingredients</summary><p id="ingredients"></p></details>
+        <details><summary>How to use</summary><p>Apply a small amount to clean skin, morning and night. Patch-test before first use.</p></details>
+        <details><summary>Shipping &amp; returns</summary><p>Ships in 1–2 business days. Free shipping over $60. Not happy? Return within 30 days for a full refund.</p></details>
+      </div>
+    </div>
+  </div>
+
+  <section style="padding-top:0"><div class="fbt">
+    <span class="eyebrow">Complete the routine</span>
+    <h2 class="serif" style="font-size:1.8rem">Frequently bought together</h2>
+    <div class="row" id="fbt"></div>
+  </div></section>
+
+  <section style="padding-top:0">
+    <h2 class="serif" style="font-size:1.9rem">Customer reviews</h2>
+    <div class="rs">
+      <div><div class="serif" style="font-size:3rem" id="avg"></div><span class="rating" id="avgStars"></span><p class="muted" id="count" style="font-size:.88rem"></p>
+        <div class="bars"><div><span>5★</span><span class="t"><i style="width:86%"></i></span><span>86%</span></div><div><span>4★</span><span class="t"><i style="width:10%"></i></span><span>10%</span></div><div><span>3★</span><span class="t"><i style="width:3%"></i></span><span>3%</span></div><div><span>2★</span><span class="t"><i style="width:1%"></i></span><span>1%</span></div><div><span>1★</span><span class="t"><i style="width:0%"></i></span><span>0%</span></div></div></div>
+      <div>
+        <div class="rv"><span class="rating">★★★★★</span><p><b>Finally, something that lasts all day.</b> I put it on in the morning and my skin still feels soft at night.</p><span class="muted" style="font-size:.82rem">Customer review</span></div>
+        <div class="rv"><span class="rating">★★★★★</span><p><b>Smells incredible.</b> Light, not greasy, and a little goes a long way. Already on my second jar.</p><span class="muted" style="font-size:.82rem">Customer review</span></div>
+        <div class="rv"><span class="rating">★★★★☆</span><p><b>Great product, wish it came bigger.</b> Works beautifully on my dry patches.</p><span class="muted" style="font-size:.82rem">Customer review</span></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap" style="margin-bottom:40px"><div class="note"><b>What this build shows:</b> a product page built to convert and lift order value: clear benefits, social proof, subscribe-and-save, a quantity selector, risk reversal (guarantee, free shipping), answers to common questions, and a "frequently bought together" bundle. Every product page is generated from the same content file, so adding a product takes one entry, not a new page.</div></div>
+
+<footer class="site"><div class="wrap"><p style="margin:0;opacity:.8">Concept build by Sherry Imam · Halo Shea is a fictional brand. All products, reviews and figures are dummy content.</p></div></footer>
+<div id="cartRoot"></div>
+<script src="store-data.js"></script>
+<script>
+document.getElementById("cartRoot").innerHTML = cartDrawerHTML();
+var id = (location.search.match(/id=([\w-]+)/) || [])[1] || "body-butter";
+var P = getProduct(id) || STORE.products[0], qty = 1;
+document.title = P.name + " · Halo Shea (concept build by Sherry Imam)";
+document.getElementById("crumb").textContent = P.name;
+document.getElementById("mainArt").innerHTML = productArt(P);
+var tex = '<svg viewBox="0 0 100 100" aria-label="Texture"><path d="M20 60c0-22 18-38 34-36s30 16 26 36-22 28-36 24-24-8-24-24z" fill="' + P.color + '"/><path d="M40 44c6-6 16-6 20 0" stroke="#fff" stroke-width="3" fill="none" opacity=".7" stroke-linecap="round"/></svg>';
+var ing = '<svg viewBox="0 0 100 100" aria-label="Ingredients"><circle cx="36" cy="40" r="16" fill="#e9d3b5"/><circle cx="64" cy="42" r="13" fill="' + P.color + '"/><circle cx="48" cy="66" r="14" fill="#9db67d"/><path d="M48 52c4-10 12-14 18-14" stroke="#4b6b2f" stroke-width="2" fill="none"/></svg>';
+var how = '<svg viewBox="0 0 100 100" aria-label="How to use"><g font-family="Georgia,serif" font-size="13" fill="#1f3a2e" text-anchor="middle"><circle cx="22" cy="50" r="13" fill="#fff" stroke="#1f3a2e"/><text x="22" y="55">1</text><circle cx="50" cy="50" r="13" fill="#fff" stroke="#1f3a2e"/><text x="50" y="55">2</text><circle cx="78" cy="50" r="13" fill="' + P.color + '" stroke="#1f3a2e"/><text x="78" y="55">3</text></g></svg>';
+document.getElementById("thumbs").innerHTML = '<div class="on">' + productArt(P) + '</div><div>' + tex + '</div><div>' + ing + '</div><div>' + how + '</div>';
+document.getElementById("badge").textContent = P.badge || "Halo Shea";
+document.getElementById("name").textContent = P.name;
+document.getElementById("rating").innerHTML = stars(P.rating) + "<small>" + P.rating + " · " + P.reviews.toLocaleString() + " reviews</small>";
+document.getElementById("price").textContent = money(P.price) + " · " + P.size;
+document.getElementById("short").textContent = P.short;
+document.getElementById("benefits").innerHTML = P.benefits.map(function (b) { return "<li>" + b + "</li>"; }).join("");
+document.getElementById("pOnce").textContent = money(P.price);
+document.getElementById("pSub").textContent = money(P.price * 0.85);
+document.getElementById("ingredients").textContent = P.ingredients;
+document.getElementById("avg").textContent = P.rating;
+document.getElementById("avgStars").textContent = stars(P.rating);
+document.getElementById("count").textContent = "Based on " + P.reviews.toLocaleString() + " reviews";
+function setQty(d) { qty = Math.max(1, qty + d); document.getElementById("q").textContent = qty; }
+function addThis() {
+  var sub = document.querySelector('input[name=buy]:checked').value === "sub";
+  CART.add(P.id + (sub ? "-sub" : ""), qty, P.name + (sub ? " (subscribe)" : ""), sub ? P.price * 0.85 : P.price);
+}
+var others = STORE.products.filter(function (x) { return x.id !== P.id; }).slice(0, 2), set = [P].concat(others), tot = 0;
+document.getElementById("fbt").innerHTML = set.map(function (x, i) { tot += x.price; return (i ? '<span class="plus">+</span>' : '') + '<div class="it">' + productArt(x) + '<b>' + x.name + '</b><br>' + money(x.price) + '</div>'; }).join("") +
+  '<div class="tot"><p class="muted" style="margin:0">Total for all three</p><div class="price"><b>' + money(tot * 0.9) + '</b> <s class="muted" style="font-size:1rem">' + money(tot) + '</s></div><button class="btn dark full" id="fbtBtn">Add all three · save 10%</button></div>';
+document.getElementById("fbtBtn").onclick = function () { set.forEach(function (x) { CART.add(x.id + "-set", 1, x.name + " (routine set)", Math.round(x.price * 0.9 * 100) / 100); }); };
+CART.render();
+</script>
+</body></html>

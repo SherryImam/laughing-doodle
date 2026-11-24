@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Meta Ads campaign · Quillbook (concept build by Sherry Imam)</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.ad{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);font-size:.88rem}
+.ad .hd{display:flex;gap:10px;align-items:center;padding:12px}
+.ad .hd i{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2))}
+.ad .hd small{display:block;color:var(--muted)}
+.ad p{padding:0 12px}
+.ad .img{aspect-ratio:1/1;display:grid;place-items:center;text-align:center;padding:24px;color:#fff;font-weight:800;font-size:1.35rem;line-height:1.25}
+.ad .ft{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:#f7f7fb}
+.ad .ft .btn{padding:7px 12px;font-size:.82rem}
+.tree{font-size:.9rem}
+.tree div{padding:8px 0 8px 14px;border-left:2px solid var(--line)}
+.tree .c{border-left:0;padding-left:0;font-weight:800}
+.tree .s{margin-left:14px}
+.best{background:#f0fdf6}
+</style></head><body>
+<div class="sample-bar"><div class="wrap"><span>Sherry Imam · Concept build</span><a href="index.html">← All builds</a></div></div>
+
+<section class="page-head"><div class="wrap">
+  <span class="eyebrow">Paid ads · Meta example · 30 days</span>
+  <h1>Trial sign-up campaign</h1>
+  <p class="lede">Goal: free-trial sign-ups at under $10 each. Three audiences tested against each other, with budget moved to the winners after day 7. This example is on Meta; I run the same test-and-scale method on TikTok Ads, Google Ads and other platforms.</p>
+  <div class="grid g4" style="margin-top:18px">
+    <div class="card kpi"><b>$8,200</b><span>Total spend</span></div>
+    <div class="card kpi"><b>912</b><span>Trial sign-ups</span></div>
+    <div class="card kpi"><b>$8.99</b><span>Cost per sign-up</span> <em>target &lt; $10</em></div>
+    <div class="card kpi"><b>2.0%</b><span>Click-through rate</span></div>
+  </div>
+</div></section>
+
+<section style="padding-top:16px"><div class="wrap grid g2">
+  <div class="card tree"><h3>Campaign structure</h3>
+    <div class="c">Campaign: Quillbook · Trial sign-ups (Leads objective)</div>
+    <div class="s"><b>Ad set 1 · Cold:</b> freelancers &amp; agency owners, 22–45, interests: freelancing, invoicing, Upwork</div>
+    <div class="s"><b>Ad set 2 · Lookalike:</b> 1% lookalike of paying customers</div>
+    <div class="s"><b>Ad set 3 · Retargeting:</b> landing page visitors, last 30 days, no sign-up</div>
+    <p class="small muted" style="margin-top:10px">Tracking: Meta Pixel + Conversions API, UTM tags on every ad, sign-ups synced to the CRM.</p>
+  </div>
+  <div class="card"><h3>Optimisation log</h3>
+    <ul class="small muted" style="padding-left:18px;margin:0">
+      <li><b>Day 3:</b> paused 2 of 6 creatives with CTR under 1%</li>
+      <li><b>Day 7:</b> moved 25% of cold budget to the lookalike ad set (lower cost per sign-up)</li>
+      <li><b>Day 12:</b> new retargeting creative using the "get paid in 6 days" review</li>
+      <li><b>Day 20:</b> tested a "free invoice template" hook against "get paid 2x faster"; the "2x faster" hook won by 31%</li>
+    </ul>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2>Results by ad set</h2>
+  <div class="table-wrap"><table>
+    <tr><th>Ad set</th><th class="num">Spend</th><th class="num">Impressions</th><th class="num">Clicks</th><th class="num">CTR</th><th class="num">Sign-ups</th><th class="num">Cost / sign-up</th></tr>
+    <tr><td>Cold: freelancers</td><td class="num">$3,900</td><td class="num">230,000</td><td class="num">4,140</td><td class="num">1.80%</td><td class="num">380</td><td class="num">$10.26</td></tr>
+    <tr class="best"><td>Lookalike 1%</td><td class="num">$2,800</td><td class="num">140,000</td><td class="num">2,940</td><td class="num">2.10%</td><td class="num">350</td><td class="num"><b>$8.00</b></td></tr>
+    <tr><td>Retargeting</td><td class="num">$1,500</td><td class="num">50,000</td><td class="num">1,320</td><td class="num">2.64%</td><td class="num">182</td><td class="num">$8.24</td></tr>
+    <tr><td><b>Total</b></td><td class="num"><b>$8,200</b></td><td class="num"><b>420,000</b></td><td class="num"><b>8,400</b></td><td class="num"><b>2.00%</b></td><td class="num"><b>912</b></td><td class="num"><b>$8.99</b></td></tr>
+  </table></div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2>Ad creatives</h2>
+  <div class="grid g3">
+    <div class="ad"><div class="hd"><i></i><div><b>Quillbook</b><small>Sponsored</small></div></div><p>Still chasing clients for payment? Quillbook sends the reminders for you.</p><div class="img" style="background:linear-gradient(135deg,#4338ca,#6366f1)">Get paid 2x faster.<br>Without chasing anyone.</div><div class="ft"><span class="small">quillbook.app<br><b>Start your free trial</b></span><span class="btn ghost">Sign up</span></div></div>
+    <div class="ad"><div class="hd"><i></i><div><b>Quillbook</b><small>Sponsored</small></div></div><p>Your next invoice in 60 seconds. Your logo, your currency, a pay-now button.</p><div class="img" style="background:linear-gradient(135deg,#0f766e,#14b8a6)">Invoice #0142<br>PAID in 3 days ✓</div><div class="ft"><span class="small">quillbook.app<br><b>14 days free, no card</b></span><span class="btn ghost">Learn more</span></div></div>
+    <div class="ad"><div class="hd"><i></i><div><b>Quillbook</b><small>Sponsored · Retargeting</small></div></div><p>"My average wait went from 3 weeks to 6 days."</p><div class="img" style="background:linear-gradient(135deg,#b45309,#f59e0b)">3 weeks → 6 days<br><span style="font-size:.9rem;font-weight:600">average time to get paid</span></div><div class="ft"><span class="small">quillbook.app<br><b>Pick up where you left off</b></span><span class="btn ghost">Sign up</span></div></div>
+  </div>
+</div></section>
+
+<footer class="foot"><div class="wrap">Concept build by Sherry Imam · Quillbook is a fictional brand. All figures are dummy data.</div></footer>
+</body></html>

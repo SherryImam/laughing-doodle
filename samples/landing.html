@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Landing page · Quillbook (concept build by Sherry Imam)</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.hero{padding:40px 0 60px}
+.hero .grid{grid-template-columns:1.1fr .9fr;align-items:center;gap:40px}
+@media(max-width:860px){.hero .grid{grid-template-columns:1fr}}
+.form{display:grid;gap:10px}
+.form input{padding:13px 14px;border:1px solid var(--line);border-radius:10px;font-size:1rem}
+.trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px;font-size:.88rem;color:var(--muted)}
+.trust span:before{content:"✓ ";color:var(--green);font-weight:800}
+.invoice{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:22px;font-size:.88rem}
+.invoice .top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}
+.invoice .row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--line)}
+.invoice .total{display:flex;justify-content:space-between;font-weight:800;font-size:1.1rem;padding-top:12px}
+.paid{transform:rotate(-8deg);border:3px solid var(--green);color:var(--green);font-weight:900;padding:4px 10px;border-radius:8px;letter-spacing:.1em}
+.logos{display:flex;gap:28px;flex-wrap:wrap;justify-content:center;color:#9a9cb3;font-weight:800;letter-spacing:.04em}
+.feat b{display:block;margin-bottom:6px}
+.feat .ic{width:38px;height:38px;border-radius:10px;background:var(--brand-soft);color:var(--brand);display:grid;place-items:center;font-weight:900;margin-bottom:12px}
+.cta-band{background:linear-gradient(135deg,var(--brand),#312e81);color:#fff;border-radius:20px;padding:40px;text-align:center}
+.cta-band p{color:#dfe1ff}
+#msg{font-size:.88rem;color:var(--green);font-weight:600;min-height:1.2em}
+</style></head><body>
+<div class="sample-bar"><div class="wrap"><span>Sherry Imam · Concept build</span><a href="index.html">← All builds</a></div></div>
+
+<div class="wrap">
+  <nav class="nav"><a class="logo" href="#"><i></i>Quillbook</a>
+    <ul><li><a href="#">Features</a></li><li><a href="sales.html">Pricing</a></li><li><a href="#">Partners</a></li></ul>
+    <a class="btn ghost" href="sales.html">See pricing</a></nav>
+</div>
+
+<section class="hero"><div class="wrap grid">
+  <div>
+    <span class="eyebrow">For freelancers & small agencies</span>
+    <h1>Get paid 2x faster. Send a professional invoice in 60 seconds.</h1>
+    <p class="lede">Quillbook sends invoices, chases late payments for you, and shows exactly who owes what, so you can stop doing admin and get back to client work.</p>
+    <form class="form" onsubmit="event.preventDefault();document.getElementById('msg').textContent='Demo form: no data is collected.';">
+      <input type="text" placeholder="Your first name" aria-label="First name">
+      <input type="email" placeholder="Work email" aria-label="Email">
+      <button class="btn primary" type="submit">Start my free 14-day trial</button>
+      <p id="msg" role="status"></p>
+    </form>
+    <div class="trust"><span>No card needed</span><span>Set up in 5 minutes</span><span>Cancel anytime</span></div>
+  </div>
+  <div class="invoice" aria-label="Product preview">
+    <div class="top"><div><b>Invoice #0142</b><br><span class="muted">To: Brightside Studio</span></div><span class="paid">PAID</span></div>
+    <div class="row"><span>Brand strategy workshop</span><b>$1,200</b></div>
+    <div class="row"><span>Website copy (5 pages)</span><b>$900</b></div>
+    <div class="row"><span>Social launch kit</span><b>$400</b></div>
+    <div class="total"><span>Total</span><span>$2,500</span></div>
+    <p class="small muted" style="margin:12px 0 0">Paid in 3 days · Auto-reminder sent day 2</p>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <p class="small muted" style="text-align:center">Trusted by 4,000+ freelancers and agencies</p>
+  <div class="logos"><span>NORTHWIND</span><span>BRIGHTSIDE</span><span>KOLA&CO</span><span>PIXELYARD</span><span>OAKMONT</span></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2 style="text-align:center">Everything you need to get paid on time</h2>
+  <p class="lede" style="text-align:center;max-width:640px;margin:0 auto 28px">Three things freelancers told us they hated most, fixed.</p>
+  <div class="grid g3">
+    <div class="card feat"><div class="ic">1</div><b>Invoices in 60 seconds</b><p class="muted">Pick a client, add items, send. Your logo, your currency, a pay-now button.</p></div>
+    <div class="card feat"><div class="ic">2</div><b>Automatic payment reminders</b><p class="muted">Polite follow-ups go out on day 2, 7 and 14, so you never have to chase.</p></div>
+    <div class="card feat"><div class="ic">3</div><b>Know who owes you</b><p class="muted">One dashboard shows paid, due and overdue, plus your cash flow for the month.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap"><div class="cta-band">
+  <h2>Stop chasing payments. Start your free trial.</h2>
+  <p>14 days free. No card needed. Takes 5 minutes to set up.</p>
+  <a class="btn amber" href="#">Start free trial</a>
+</div></div></section>
+
+<div class="wrap"><div class="note"><b>What this page shows:</b> a single-goal landing page (trial sign-up) with one form, a benefit-led headline, a product preview, trust signals and a repeated call to action. Ad traffic lands here; sign-ups enter the email automation. <a href="funnel.html">See the funnel →</a></div></div>
+<footer class="foot"><div class="wrap">Concept build by Sherry Imam · Quillbook is a fictional brand created for portfolio purposes. All names, logos and figures are dummy content.</div></footer>
+</body></html>

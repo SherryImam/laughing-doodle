@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sales & pricing page · Quillbook (concept build by Sherry Imam)</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.plans{align-items:stretch}
+.plan{display:flex;flex-direction:column;gap:6px;position:relative}
+.plan .price{font-size:2.4rem;font-weight:800;letter-spacing:-.03em}
+.plan .price small{font-size:.95rem;color:var(--muted);font-weight:600}
+.plan ul{list-style:none;padding:0;margin:10px 0 18px;display:grid;gap:8px;font-size:.93rem}
+.plan li:before{content:"✓ ";color:var(--green);font-weight:800}
+.plan .btn{margin-top:auto}
+.plan.best{border:2px solid var(--brand);box-shadow:0 12px 40px rgba(67,56,202,.18)}
+.plan.best .tag{position:absolute;top:-12px;left:22px;background:var(--brand);color:#fff;font-size:.75rem;font-weight:800;padding:4px 10px;border-radius:999px}
+.toggle{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px;margin:6px 0 26px}
+.toggle span{padding:7px 14px;border-radius:999px;font-size:.88rem;font-weight:700;color:var(--muted)}
+.toggle span.on{background:var(--brand);color:#fff}
+.pain .card{border-left:4px solid var(--red)}
+.quote p{font-size:1.02rem}
+details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+details summary{font-weight:700;cursor:pointer}
+details p{margin:10px 0 0;color:var(--muted)}
+.guarantee{display:flex;gap:18px;align-items:center}
+.seal{flex:0 0 76px;height:76px;border-radius:50%;border:3px dashed var(--green);display:grid;place-items:center;font-weight:900;color:var(--green);text-align:center;font-size:.78rem;line-height:1.1}
+</style></head><body>
+<div class="sample-bar"><div class="wrap"><span>Sherry Imam · Concept build</span><a href="index.html">← All builds</a></div></div>
+<div class="wrap"><nav class="nav"><a class="logo" href="landing.html"><i></i>Quillbook</a><ul><li><a href="landing.html">Product</a></li><li><a href="#">Pricing</a></li><li><a href="#faq">FAQ</a></li></ul><a class="btn primary" href="#plans">Start free</a></nav></div>
+
+<section class="page-head" style="text-align:center"><div class="wrap">
+  <span class="eyebrow">Pricing</span>
+  <h1>Late payments are costing you more than $19 a month.</h1>
+  <p class="lede" style="margin:0 auto">The average freelancer waits 23 days to get paid and spends 5 hours a month chasing invoices. Quillbook pays for itself with your first on-time invoice.</p>
+</div></section>
+
+<section style="padding-top:10px"><div class="wrap pain">
+  <div class="grid g3">
+    <div class="card"><b>Chasing clients</b><p class="muted">Awkward follow-up emails that still don't get answered.</p></div>
+    <div class="card"><b>Messy spreadsheets</b><p class="muted">No idea who has paid, who's late, or what's coming in.</p></div>
+    <div class="card"><b>Unpaid work</b><p class="muted">Invoices that slip through the cracks and never get paid.</p></div>
+  </div>
+</div></section>
+
+<section id="plans" style="text-align:center;padding-top:20px"><div class="wrap">
+  <h2>Pick a plan. Try any of them free for 14 days.</h2>
+  <div class="toggle"><span>Monthly</span><span class="on">Yearly · save 20%</span></div>
+  <div class="grid g3 plans" style="text-align:left">
+    <div class="card plan"><b>Starter</b><span class="muted small">Solo freelancers</span><div class="price">$9<small>/mo</small></div>
+      <ul><li>Unlimited invoices</li><li>5 active clients</li><li>Card &amp; bank payments</li><li>Payment reminders</li></ul>
+      <a class="btn ghost" href="landing.html">Start free</a></div>
+    <div class="card plan best"><span class="tag">Most popular</span><b>Pro</b><span class="muted small">Growing freelancers</span><div class="price">$19<small>/mo</small></div>
+      <ul><li>Everything in Starter</li><li>Unlimited clients</li><li>Recurring invoices</li><li>Cash-flow dashboard</li><li>Late fees, added automatically</li></ul>
+      <a class="btn primary" href="landing.html">Start free</a></div>
+    <div class="card plan"><b>Agency</b><span class="muted small">Teams up to 10</span><div class="price">$39<small>/mo</small></div>
+      <ul><li>Everything in Pro</li><li>Team seats &amp; roles</li><li>Client portal</li><li>Accounting integrations</li><li>Priority support</li></ul>
+      <a class="btn ghost" href="landing.html">Start free</a></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2 style="text-align:center">What users say</h2>
+  <div class="grid g2" style="margin-top:22px">
+    <div class="card quote"><p>"My average wait went from 3 weeks to 6 days. The automatic reminders alone are worth it."</p><span class="muted small">Freelance designer</span></div>
+    <div class="card quote"><p>"We finally know our cash flow for the month. No more spreadsheet guessing."</p><span class="muted small">Agency owner, 6 staff</span></div>
+  </div>
+</div></section>
+
+<section><div class="wrap"><div class="card guarantee"><div class="seal">30-DAY<br>MONEY<br>BACK</div><div><b>Get paid faster in 30 days, or get your money back.</b><p class="muted" style="margin:4px 0 0">If Quillbook doesn't cut your payment time, email us and we'll refund your first month. No questions.</p></div></div></div></section>
+
+<section id="faq"><div class="wrap" style="max-width:760px">
+  <h2>Questions before you start</h2>
+  <div class="grid">
+    <details><summary>Do my clients need an account to pay?</summary><p>No. They get a link and pay by card or bank transfer in one click.</p></details>
+    <details><summary>Can I import my existing clients?</summary><p>Yes, upload a spreadsheet and your clients and unpaid invoices come across in minutes.</p></details>
+    <details><summary>What happens after the free trial?</summary><p>You choose a plan. If you don't, your account pauses. Nothing is charged automatically.</p></details>
+    <details><summary>I recommend tools to other freelancers. Can I earn from this?</summary><p>Yes. Our partner program pays 30% recurring commission for 12 months. <a href="partners.html">See the partner program</a>.</p></details>
+  </div>
+</div></section>
+
+<section><div class="wrap" style="text-align:center"><h2>Your next invoice could be your first one paid on time.</h2><a class="btn primary" href="landing.html">Start my free 14-day trial</a></div></section>
+
+<div class="wrap"><div class="note"><b>What this page shows:</b> a sales page that opens with the cost of the problem, handles objections (FAQ, guarantee, social proof), anchors pricing with a highlighted "most popular" plan, and links to the partner program. <a href="funnel.html">See where it sits in the funnel →</a></div></div>
+<footer class="foot"><div class="wrap">Concept build by Sherry Imam · Quillbook is a fictional brand created for portfolio purposes. All names, reviews and figures are dummy content.</div></footer>
+</body></html>
